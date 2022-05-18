@@ -12,17 +12,21 @@ public class BasicNavigation {
         WebDriverManager.chromedriver().setup();
 
         // 2 // create instance of the Selenium WebDriver
-
         WebDriver driver = new ChromeDriver();
 
-        // 3 go to an URl address
+        // 3 Maximize current window
+        driver.manage().window().maximize();
+        // driver.manage().window().fullscreen(); sometimes does not work on Windows
 
+        // 4 go to an URl address
         driver.get("https://www.tesla.com");
-        // pause execution for 3 second
+
+
 
         System.out.println("Current title getTitle() = " + driver.getTitle());
         System.out.println("theCurrentURL getCurrentUrl() = " + driver.getCurrentUrl());
 
+        // pause execution for 3 second
         Thread.sleep(2000);
 
         driver.navigate().back();
